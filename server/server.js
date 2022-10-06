@@ -2,9 +2,12 @@ const express = require("express");
 const { graphqlHTTP } = require("express-graphql");
 const db = require("./config/dbConnection");
 const schema = require("./schema/schema");
+const cors = require("cors");
 
 const PORT = process.env.PORT || 5000;
 const app = express();
+
+app.use(cors()); // make sure to pass domain whitelist to cors options for production
 app.use(
   "/graphql",
   graphqlHTTP({
