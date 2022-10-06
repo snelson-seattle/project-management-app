@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/snelson-seattle/project-management-app/issues"
   },
-  "homepage": "https://github.com/snelson-seattle/project-management-app#readme"
+  "homepage": "https://github.com/snelson-seattle/project-management-app#readme",
+  "devDependencies": {
+    "concurrently": "^7.4.0"
+  }
 }
