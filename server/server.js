@@ -16,8 +16,11 @@ app.use(express.json());
 
 db.once("open", () => {
   console.log(`MODE=${process.env.NODE_ENV}`);
-  console.log("Datbase connection established.");
+  console.log(`Database Connection: ${db.host}`);
   app.listen(PORT, () => {
     console.log(`Server is listening on port ${PORT}`);
+    if (process.env.NODE_ENV === "development") {
+      console.log(`Use GraphQL at http://localhost:${PORT}/graphql`);
+    }
   });
 });
